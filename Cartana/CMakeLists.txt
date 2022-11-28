@@ -4,6 +4,6 @@
 cmake_minimum_required (VERSION 3.8)
 
 # Add source to this project's executable.
-add_executable (Cartana "Cartana.cpp" "Cartana.h" "src/core/core.cpp" "src/core/core.h" "src/core/command/command.cpp"  "src/core/command/result/result.cpp" "src/core/command/result/result.h" "src/core/command/resulttypes/resulttypes.h" "src/core/log/log.cpp" "src/core/command/handler/commandhandler.cpp" "src/core/command/handler/commandhandler.h" "src/core/command/command.h")
+add_executable (Cartana "Cartana.cpp" "Cartana.h" "src/core/core.cpp" "src/core/core.h" "src/core/command/command.cpp"  "src/core/command/result/result.cpp" "src/core/command/result/result.h" "src/core/command/resulttypes/resulttypes.h" "src/core/log/log.cpp" "src/core/command/handler/commandhandler.cpp" "src/core/command/handler/commandhandler.h" "src/core/command/command.h" "src/hardware/hardware.cpp" "src/hardware/hardware.h")
 
 # TODO: Add tests and install targets if needed.
