@@ -6,5 +6,5 @@
 #pragma once
 
 void InvalidCommand::Throw(Command* command) {
-	Error("Invalid Command: " + command->GetRaw());
+	Error("Invalid Command: " + command->GetName());
 }

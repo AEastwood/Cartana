@@ -19,6 +19,11 @@ Command::Command() {
 	this->uuid = rand();
 }
 
+// Add argument to command
+void Command::AddArgument(string argument) {
+	this->arguments.push_back(argument);
+}
+
 // Determines if command exits
 bool Command::Exits() {
 	return ValidCommands::Exits(this);
@@ -37,6 +42,16 @@ string Command::GetName() {
 // Get Command as raw input
 string Command::GetRaw() {
 	return this->raw;
+}
+
+// Set arguments of the command
+void Command::SetArguments(vector<string> arguments) {
+	this->arguments = arguments;
+}
+
+// Set name of command
+void Command::SetName(string name) {
+	this->name = name;
 }
 
 // Set when the command will time out and exit

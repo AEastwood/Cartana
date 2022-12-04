@@ -17,12 +17,12 @@ vector<string> ValidCommands::ExitCommands = {
 
 // Determines if the command exists
 bool ValidCommands::Exists(Command* command) {
-	return Commands.find(command->GetRaw()) != Commands.end();
+	return Commands.find(command->GetName()) != Commands.end();
 }
 
 // Determines if the command should exit
 bool ValidCommands::Exits(Command* command) {
-	return std::find(ExitCommands.begin(), ExitCommands.end(), command->GetRaw()) != ExitCommands.end();
+	return std::find(ExitCommands.begin(), ExitCommands.end(), command->GetName()) != ExitCommands.end();
 }
 
 // Register valid commands

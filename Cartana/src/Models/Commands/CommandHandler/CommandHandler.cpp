@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 #include "../Command/Command.h"
 #include "../CommandHandler/CommandHandler.h"
 #include "../../Log/Log.h"
@@ -9,6 +10,8 @@
 #pragma once
 
 using std::cin;
+using std::string;
+using std::stringstream;
 using std::vector;
 
 // Tell CLI to await new commands
@@ -16,7 +19,19 @@ int CommandHandler::Await() {
 	return 0;
 }
 
+// Format command, extract arguments and set them appropriately
 Command CommandHandler::FormatCommand(Command command) {
+	stringstream ss(command.raw);
+	int index = 0;
+
+	while (ss.good()) {
+		string arg;
+		getline(ss, arg, ' ');
+
+		(index == 0) ? command.SetName(arg) : command.AddArgument(arg);
+		index++;
+	}
+
 	return command;
 }
 
@@ -24,7 +39,8 @@ Command CommandHandler::FormatCommand(Command command) {
 Command CommandHandler::GetCommand() {
 	Command command;
 	GetInput(&command.raw);
-
+	
+	command = this->FormatCommand(command);
 	commands.push_back(command);
 
 	return command;
@@ -32,7 +48,7 @@ Command CommandHandler::GetCommand() {
 
 // Return the previous command
 Command CommandHandler::GetPreviousCommand(int depth) {
-	return commands[this->commands.size() - depth];
+	return this->commands[this->commands.size() - depth];
 }
 
 // Return a list of previous commands
@@ -43,10 +59,10 @@ vector<Command> CommandHandler::GetPreviousCommands() {
 // Handle the incoming command
 void CommandHandler::Handle(Command* command) {
 	try {
-		ValidCommands::Commands[command->GetRaw()]();
+		ValidCommands::Commands[command->GetName()]();
 	}
 	catch (CommandException commandException) {
-		Error("Unable to execute command " + command->GetRaw() + " - " + commandException.GetMessage());
+		Error("Unable to execute command " + command->GetName() + " - " + commandException.GetMessage());
 	}
 }
 
