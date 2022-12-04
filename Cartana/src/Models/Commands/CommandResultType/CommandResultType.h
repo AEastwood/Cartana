@@ -1,6 +1,6 @@
 #pragma once
 
-enum ResultTypes {
+enum CommandResultTypes {
     FAILED,
     SUCCEEDED,
     IN_PROGRESS,

@@ -1,4 +1,4 @@
-#include "command/handler/commandhandler.h"
+#include "../Models/Commands/CommandHandler/CommandHandler.h"
 
 class Core {
 

@@ -1,8 +1,8 @@
 ﻿// Cartana.cpp : Defines the entry point for the application.
 
 #include "Cartana.h"
-#include "src/core/command/handler/commandhandler.h"
-#include "src/core/core.h"
+#include "src/Models/Commands/CommandHandler/CommandHandler.h"
+#include "src/Core/Core.h"
 
 using namespace std;
 

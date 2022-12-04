@@ -1,5 +1,5 @@
 #include <vector>
-#include "../command.h"
+#include "../Command/Command.h"
 
 #pragma once
 
@@ -12,10 +12,10 @@ class CommandHandler {
 private:
 	vector<Command> commands;
 	Command FormatCommand(Command command);
-	Command GetCommand();
 	Command GetPreviousCommand(int depth = 2);
 	vector<Command> GetPreviousCommands();
 
 public:
 	int Await();
+	Command GetCommand();
 };

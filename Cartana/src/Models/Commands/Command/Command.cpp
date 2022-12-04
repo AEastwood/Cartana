@@ -1,6 +1,6 @@
 #include <iostream>
-#include "./result/result.h"
-#include "../command/command.h"
+#include "../Command/Command.h"
+#include "../CommandResult/CommandResult.h"
 
 #pragma once
 
@@ -10,6 +10,11 @@ using std::string;
 
 Command::Command() {
 	this->uuid = rand();
+}
+
+// Determines if command exits
+bool Command::Exits() {
+	return this->GetRaw() == "exit";
 }
 
 // get Command Name

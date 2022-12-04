@@ -1,18 +1,18 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "../command.h"
-#include "commandhandler.h"
+#include "../Command/Command.h"
+#include "../CommandHandler/CommandHandler.h"
 
 #pragma once
 
+using std::cin;
 using std::cout;
 using std::endl;
+using std::string;
 using std::vector;
 
-
 int CommandHandler::Await() {
-	Command command = GetCommand();
 
 	if (this->commands.size() > 1) {
 		cout << "Previous command: " << this->GetPreviousCommand().ToString() << endl;

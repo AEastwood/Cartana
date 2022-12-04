@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../command/result/result.h"
+#include "../CommandResult/CommandResult.h"
 
 #pragma once 
 
@@ -11,11 +11,12 @@ public:
 	string flags[5];
 	string name;
 	string raw;
-	Result result;
+	CommandResult result;
 	int uuid;
 
 	Command();
 
+	bool Exits();
 	string GetName();
 	string GetRaw();
 	string ToString();

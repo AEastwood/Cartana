@@ -1,5 +1,5 @@
 #include "hardware.h"
-#include "../core/log/log.h"
+#include "../Models/Log/Log.h"
 
 Hardware::Hardware() {
 	Log("Hardware says hello :)");
