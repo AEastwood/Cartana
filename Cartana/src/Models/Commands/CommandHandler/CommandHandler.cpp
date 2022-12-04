@@ -46,6 +46,12 @@ Command CommandHandler::GetCommand() {
 	return command;
 }
 
+// Get user input and set it to the proposed property
+void CommandHandler::GetInput(string* property) {
+	cout << "Enter command: ";
+	getline(cin, *property);
+}
+
 // Return the previous command
 Command CommandHandler::GetPreviousCommand(int depth) {
 	return this->commands[this->commands.size() - depth];

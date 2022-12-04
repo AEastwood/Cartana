@@ -17,6 +17,7 @@ private:
 public:
 	int Await();
 	Command GetCommand();
+	static void GetInput(string* property);
 	Command FormatCommand(Command command);
 	void Handle(Command* command);
 	void Register();
