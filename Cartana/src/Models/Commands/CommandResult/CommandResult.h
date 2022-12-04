@@ -6,7 +6,7 @@
 class CommandResult
 {
 private:
-    int timeout = 60;
+    
 
 public:
     int state = CommandResultTypes::NEW;

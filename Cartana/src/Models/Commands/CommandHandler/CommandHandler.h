@@ -11,11 +11,13 @@ class CommandHandler {
 
 private:
 	vector<Command> commands;
-	Command FormatCommand(Command command);
 	Command GetPreviousCommand(int depth = 2);
 	vector<Command> GetPreviousCommands();
 
 public:
 	int Await();
 	Command GetCommand();
+	Command FormatCommand(Command command);
+	void Handle(Command* command);
+	void Register();
 };
