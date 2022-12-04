@@ -5,6 +5,13 @@
 #include "../CommandHandler/CommandHandler.h"
 #include "../../Log/Log.h"
 #include "../ValidCommands/ValidCommands.h"
+#include <iostream>
+#include <string>
+#include <sstream>
+#include "../Command/Command.h"
+#include "../CommandHandler/CommandHandler.h"
+#include "../../Log/Log.h"
+#include "../ValidCommands/ValidCommands.h"
 #include "../../Exceptions/CommandException/CommandException.h"
 
 #pragma once
