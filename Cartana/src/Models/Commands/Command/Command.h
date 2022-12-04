@@ -1,16 +1,18 @@
 #include <iostream>
+#include <map>
 #include <vector>
 #include "../CommandResult/CommandResult.h"
 
 #pragma once 
 
+using std::map;
 using std::string;
 using std::vector;
 
 class Command {
 
 public:
-	vector<string> arguments;
+	map<string, string> arguments;
 	string name;
 	string raw;
 	CommandResult result;
@@ -25,7 +27,6 @@ public:
 	string GetName();
 	string GetRaw();
 	string GetUUID();
-	void SetArguments(vector<string> arguments);
 	void SetName(string name);
 	void SetTimeout(int timeout);
 	void SetUUID();

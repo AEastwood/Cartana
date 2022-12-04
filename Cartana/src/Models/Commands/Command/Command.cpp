@@ -1,10 +1,12 @@
 #include <iostream>
+#include <sstream>
 #include <vector>
 #include "../Command/Command.h"
 #include "../CommandResult/CommandResult.h"
 #include "../ValidCommands/ValidCommands.h"
 #include "../../../../lib/uuid_v4-1.0.0/uuid_v4.h"
 #include "../../../../lib/uuid_v4-1.0.0/endianness.h"
+#include "../../Log/Log.h"
 
 #pragma once
 
@@ -12,6 +14,7 @@ using std::cout;
 using std::endl;
 using std::map;
 using std::string;
+using std::stringstream;
 using std::vector;
 
 map<string, string> arguments;
@@ -22,7 +25,33 @@ Command::Command() {
 
 // Add argument to command
 void Command::AddArgument(string argument) {
-	this->arguments.push_back(argument);
+	stringstream ss(argument);
+	string key;
+	string val;
+	int index = 0;
+
+	while (ss.good()) {
+		string arg;
+		
+		getline(ss, arg, '=');
+
+		if (index == 0) {
+			string argStart;
+			argStart = arg;
+
+			if (argStart.substr(0, 2) != "--") continue;
+
+			Log(argStart);
+			key = arg.replace(0, 2, "", 0, 4);
+			index++;
+			continue;
+		}
+
+		val = arg;
+		index++;
+	}
+
+	this->arguments[key] = val;
 }
 
 // Determines if command exits
@@ -48,11 +77,6 @@ string Command::GetRaw() {
 // Get Command UUID
 string Command::GetUUID() {
 	return this->uuid;
-}
-
-// Set arguments of the command
-void Command::SetArguments(vector<string> arguments) {
-	this->arguments = arguments;
 }
 
 // Set name of command

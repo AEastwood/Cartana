@@ -35,7 +35,10 @@ Command CommandHandler::FormatCommand(Command command) {
 		string arg;
 		getline(ss, arg, ' ');
 
-		(index == 0) ? command.SetName(arg) : command.AddArgument(arg);
+		(index == 0) 
+			? command.SetName(arg) 
+			: command.AddArgument(arg);
+
 		index++;
 	}
 
