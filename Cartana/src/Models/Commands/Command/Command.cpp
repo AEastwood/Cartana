@@ -39,7 +39,7 @@ void Command::AddArgument(string argument) {
 			string argStart;
 			argStart = arg;
 
-			if (argStart.substr(0, 2) != "--") continue;
+			if (argStart.substr(0, 2) != "--") return;
 
 			Log(argStart);
 			key = arg.replace(0, 2, "", 0, 4);
