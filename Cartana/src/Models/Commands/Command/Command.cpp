@@ -64,6 +64,11 @@ bool Command::Exists() {
 	return ValidCommands::Exits(this);
 }
 
+// return map of KeyVal pair arguments
+map<string, string> Command::GetArguments() {
+	return this->arguments;
+}
+
 // get Command Name
 string Command::GetName() {
 	return this->name;
@@ -72,6 +77,11 @@ string Command::GetName() {
 // Get Command as raw input
 string Command::GetRaw() {
 	return this->raw;
+}
+
+// Return timeout
+int Command::GetTimeout(){
+	return this->timeout;
 }
 
 // Get Command UUID

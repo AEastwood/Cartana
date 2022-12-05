@@ -21,14 +21,9 @@ using std::string;
 using std::stringstream;
 using std::vector;
 
-// Tell CLI to await new commands
-int CommandHandler::Await() {
-	return 0;
-}
-
 // Format command, extract arguments and set them appropriately
 Command CommandHandler::FormatCommand(Command command) {
-	stringstream ss(command.raw);
+	stringstream ss(command.GetRaw());
 	int index = 0;
 
 	while (ss.good()) {

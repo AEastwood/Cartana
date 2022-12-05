@@ -15,7 +15,6 @@ private:
 	vector<Command> GetPreviousCommands();
 
 public:
-	int Await();
 	Command GetCommand();
 	static void GetInput(string* property);
 	Command FormatCommand(Command command);

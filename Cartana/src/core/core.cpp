@@ -31,7 +31,6 @@ void Core::AwaitCommands() {
 		}
 
 		commandHandler.Handle(&command);
-		commandHandler.Await();
 	}
 }
 
