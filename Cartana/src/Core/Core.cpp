@@ -7,9 +7,6 @@
 
 #pragma once
 
-using std::cout;
-using std::endl;
-
 void Core::AwaitCommands() {
 	CommandHandler commandHandler;
 	Command command;

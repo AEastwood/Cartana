@@ -11,5 +11,6 @@ private:
 public:
 
 	static int TestAction(map<string, string> arguments);
+	static int EngineStart(map<string, string> arguments);
 
 };

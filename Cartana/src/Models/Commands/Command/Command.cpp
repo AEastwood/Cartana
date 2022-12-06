@@ -50,6 +50,9 @@ void Command::AddArgument(string argument) {
 		index++;
 	}
 
+	transform(key.begin(), key.end(), key.begin(), tolower);
+	transform(val.begin(), val.end(), val.begin(), tolower);
+
 	this->arguments[key] = val;
 }
 
@@ -90,6 +93,7 @@ string Command::GetUUID() {
 
 // Set name of command
 void Command::SetName(string name) {
+	transform(name.begin(), name.end(), name.begin(), tolower);
 	this->name = name;
 }
 
