@@ -5,8 +5,8 @@
 #include "../Command/Command.h"
 #include "../CommandResult/CommandResult.h"
 #include "../ValidCommands/ValidCommands.h"
-#include "../../../../lib/uuid_v4-1.0.0/uuid_v4.h"
-#include "../../../../lib/uuid_v4-1.0.0/endianness.h"
+//#include "../../../../lib/uuid_v4-1.0.0/uuid_v4.h"
+//#include "../../../../lib/uuid_v4-1.0.0/endianness.h"
 #include "../../Log/Log.h"
 
 #pragma once
@@ -105,10 +105,10 @@ void Command::SetTimeout(int timeout) {
 
 // Set UUID
 void Command::SetUUID() {
-	UUIDv4::UUIDGenerator<std::mt19937_64> uuidGenerator;
+	/*UUIDv4::UUIDGenerator<std::mt19937_64> uuidGenerator;
 	UUIDv4::UUID uuid = uuidGenerator.getUUID();
 	
-	this->uuid = uuid.str();
+	this->uuid = uuid.str();*/
 }
 
 // Convert command to string
