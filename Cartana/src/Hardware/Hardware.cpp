@@ -1,5 +1,5 @@
 #include <iostream>
-#include "hardware.h"
+#include "Hardware.h"
 #include "../Models/Log/Log.h"
 //#include "../../lib/uuid_v4-1.0.0/uuid_v4.h"
 //#include "../../lib/uuid_v4-1.0.0/endianness.h"
