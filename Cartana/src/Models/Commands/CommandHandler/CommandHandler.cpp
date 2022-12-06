@@ -5,13 +5,6 @@
 #include "../CommandHandler/CommandHandler.h"
 #include "../../Log/Log.h"
 #include "../ValidCommands/ValidCommands.h"
-#include <iostream>
-#include <string>
-#include <sstream>
-#include "../Command/Command.h"
-#include "../CommandHandler/CommandHandler.h"
-#include "../../Log/Log.h"
-#include "../ValidCommands/ValidCommands.h"
 #include "../../Exceptions/CommandException/CommandException.h"
 
 #pragma once
@@ -20,6 +13,9 @@ using std::cin;
 using std::string;
 using std::stringstream;
 using std::vector;
+
+// Command history
+vector<Command> CommandHandler::commands;
 
 // Format command, extract arguments and set them appropriately
 Command CommandHandler::FormatCommand(Command command) {
@@ -30,9 +26,7 @@ Command CommandHandler::FormatCommand(Command command) {
 		string arg;
 		getline(ss, arg, ' ');
 
-		(index == 0) 
-			? command.SetName(arg) 
-			: command.AddArgument(arg);
+		(index == 0) ? command.SetName(arg) : command.AddArgument(arg);
 
 		index++;
 	}
@@ -59,12 +53,12 @@ void CommandHandler::GetInput(string* property) {
 
 // Return the previous command
 Command CommandHandler::GetPreviousCommand(int depth) {
-	return this->commands[this->commands.size() - depth];
+	return commands[commands.size() - depth];
 }
 
 // Return a list of previous commands
 vector<Command> CommandHandler::GetPreviousCommands() {
-	return this->commands;
+	return commands;
 }
 
 // Handle the incoming command

@@ -4,7 +4,6 @@
 #include <vector>
 #include "ValidCommands.h"
 #include "../../Log/Log.h"
-#include "../CommandActions/CommandActions.h"
 #include "../../../Hardware/Engine/Engine.h"
 
 #pragma once
@@ -35,8 +34,8 @@ bool ValidCommands::Exits(Command* command) {
 
 // Register valid commands
 void ValidCommands::Register() {
-	ValidCommands::Commands["commands.previous"] = CommandActions::TestAction;
-	
 	ValidCommands::Commands["engine.start"] = Engine::Start;
 	ValidCommands::Commands["engine.stop"] = Engine::Stop;
+
+	ValidCommands::Commands["engine.state"] = Engine::GetEngineState;
 }

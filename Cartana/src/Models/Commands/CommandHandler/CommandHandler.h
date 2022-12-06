@@ -8,16 +8,14 @@ using std::endl;
 using std::vector;
 
 class CommandHandler {
-
-private:
-	vector<Command> commands;
-	Command GetPreviousCommand(int depth = 2);
-	vector<Command> GetPreviousCommands();
-
 public:
+	static vector<Command> commands;
 	Command GetCommand();
 	static void GetInput(string* property);
+	static Command GetPreviousCommand(int depth = 2);
+	static vector<Command> GetPreviousCommands();
 	Command FormatCommand(Command command);
+	
 	void Handle(Command* command);
 	void Register();
 };
