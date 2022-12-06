@@ -17,9 +17,3 @@ void Error(string message) {
 void Log(string message) {
 	cout << "[Log] " << message << "\033[0m" << endl;
 }
-
-
-// Test function to see a basic principle of reflection for commands
-void Test() {
-	Log("this is a test");
-}

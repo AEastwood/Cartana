@@ -41,7 +41,6 @@ void Command::AddArgument(string argument) {
 
 			if (argStart.substr(0, 2) != "--") return;
 
-			Log(argStart);
 			key = arg.replace(0, 2, "", 0, 4);
 			index++;
 			continue;

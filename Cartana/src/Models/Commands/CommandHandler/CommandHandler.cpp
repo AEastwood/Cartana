@@ -70,7 +70,7 @@ vector<Command> CommandHandler::GetPreviousCommands() {
 // Handle the incoming command
 void CommandHandler::Handle(Command* command) {
 	try {
-		ValidCommands::Commands[command->GetName()]();
+		ValidCommands::Commands[command->GetName()](command->GetArguments());
 	}
 	catch (CommandException commandException) {
 		Error("Unable to execute command " + command->GetName() + " - " + commandException.GetMessage());

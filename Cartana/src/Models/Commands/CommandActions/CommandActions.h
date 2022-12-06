@@ -10,6 +10,6 @@ private:
 
 public:
 
-	static string TestAction(map<string, string> arguments);
+	static int TestAction(map<string, string> arguments);
 
 };

@@ -1,14 +1,21 @@
 #include <iostream>
+#include <map>
+#include <string>
+#include <vector>
 #include "ValidCommands.h"
 #include "../../Log/Log.h"
+#include "../CommandActions/CommandActions.h"
 
 #pragma once
 
 using std::map;
 using std::string;
 
+// Define function pointer
+typedef int (*FnPtr)(map<string, string>);
+
 // List of valid commands
-map<string, void(*)()> ValidCommands::Commands;
+map<string, FnPtr> ValidCommands::Commands;
 
 // List of valid exit commands
 vector<string> ValidCommands::ExitCommands = {
@@ -27,5 +34,5 @@ bool ValidCommands::Exits(Command* command) {
 
 // Register valid commands
 void ValidCommands::Register() {
-	Commands["commands.previous"] = Test;
+	Commands["commands.previous"] = CommandActions::TestAction;
 }

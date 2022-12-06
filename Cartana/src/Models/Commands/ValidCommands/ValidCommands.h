@@ -1,3 +1,4 @@
+#include <iostream>
 #include <map>
 #include <string>
 #include <vector>
@@ -11,7 +12,9 @@ using std::vector;
 class ValidCommands {
 
 public:
-	static map<string, void(*)()> Commands;
+	typedef int (*FnPtr)(map<string, string>);
+	static map<string, FnPtr> Commands;
+
 	static vector<string> ExitCommands;
 	static bool Exists(Command* command);
 	static bool Exits(Command* command);
