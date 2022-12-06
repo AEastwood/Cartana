@@ -34,6 +34,7 @@ void Core::AwaitCommands() {
 	}
 }
 
+// Introduce Engine
 void Core::Introduce() {
 	cout << "Cartana version 0.0.1" << endl;
 }

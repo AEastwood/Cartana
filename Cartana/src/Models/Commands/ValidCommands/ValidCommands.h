@@ -1,10 +1,11 @@
-#include <vector>
 #include <map>
+#include <string>
+#include <vector>
 #include "../Command/Command.h"
 
 #pragma once
 
-using std::map;
+using std::string;
 using std::vector;
 
 class ValidCommands {
